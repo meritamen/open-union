@@ -4,15 +4,15 @@
 
 module UnionSpecs where
 
-import Data.Extensible.Union
+import Data.Union
 import Data.Functor.Identity
 import Test.Hspec
 
 type DummyUnion = OpenUnion Identity '[Int, Bool, String]
 type DummyUnion' = OpenUnion Identity '[Double, Int, Bool, String]
 
-sumSpecs :: Spec
-sumSpecs = do
+unionSpecs :: Spec
+unionSpecs = do
   describe "OpenUnion" $ do
     let
       exInt = inj @_ @Int @[Int, Bool, String] (Identity 42)

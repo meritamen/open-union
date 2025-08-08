@@ -3,9 +3,9 @@ module Main (main) where
 import Test.Tasty
 import Test.Tasty.Hspec
 
-import ProductSpecs
+import UnionSpecs
 
 main :: IO ()
 main = do
-  specs <- concat <$> mapM testSpecs [productSpecs]
+  specs <- concat <$> mapM testSpecs [unionSpecs]
   defaultMain $ testGroup "All Tests" [testGroup "Specs" specs]
